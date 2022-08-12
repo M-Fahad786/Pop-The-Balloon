@@ -1,4 +1,3 @@
-
 let colors = [
   "#84cc16",
   "#22c55e",
@@ -34,7 +33,7 @@ let balloonIds = [
   "balloon-23",
   "balloon-24",
   "balloon-25",
-]
+];
 
 for (let i = 0; i < balloonIds.length; i++) {
   let randomColor = colors[Math.floor(Math.random() * colors.length)];
@@ -56,7 +55,7 @@ function findBalloon(a) {
   if (poppedBalloon === matchBalloon.style.backgroundColor) {
     document.getElementById(a).style.backgroundColor =
       colors[Math.floor(Math.random() * colors.length)];
-    document.getElementById(a).style.transition = "1s";
+    document.getElementById(a).style.transition = "1.2s";
     document.getElementById("new-score").innerText = ++score;
   } else {
     ++failed;
@@ -66,12 +65,9 @@ function findBalloon(a) {
   }
   matchBalloon.style.backgroundColor =
     colors[Math.floor(Math.random() * colors.length)];
-  if (failed === 5) {
+  if (score === 10) {
+    document.getElementById("game-win").style.display = "flex";
+  } else if (failed === 5) {
     document.getElementById("game-over").style.display = "flex";
   }
-  else if(score === 10) {
-     document.getElementById("game-win").style.display = "flex";
-
-   }
 }
-
