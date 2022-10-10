@@ -36,7 +36,7 @@ let balloonIds = [
 ];
 
 for (let i = 0; i < balloonIds.length; i++) {
-  let randomColor = colors[Math.floor(Math.random() * colors.length)];
+  let randomColor = colors[Math.floor(Math.random() * colors.length + 1)];
   let valBalloon = balloonIds[i];
   let getBalloon = document.getElementById(valBalloon);
   getBalloon.style.backgroundColor = randomColor;
